@@ -26,5 +26,14 @@
 	<classpathentry kind="lib" path="lib/jdom-2.0.3/jdom-2.0.3-junit.jar"/>
 	<classpathentry kind="lib" path="lib/jdom-2.0.3/jdom-2.0.3-sources.jar"/>
 	<classpathentry kind="lib" path="lib/jdom-2.0.3/jdom-2.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itext-pdfa-5.5.7-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itext-pdfa-5.5.7-sources.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itext-pdfa-5.5.7.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itext-xtra-5.5.7-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itext-xtra-5.5.7-sources.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itext-xtra-5.5.7.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itextpdf-5.5.7-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itextpdf-5.5.7-sources.jar"/>
+	<classpathentry kind="lib" path="lib/iText/itextpdf-5.5.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

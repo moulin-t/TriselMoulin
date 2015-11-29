@@ -11,8 +11,8 @@ private Usager u1 = null;
 private Usager u2 = null;
 	@Before
 	public void setUp() throws Exception {
-		u1 = new Usager("u1", "Dupont", "Laurent", "21, rue du mouchard", "Chausson", "86200", "user1", "mdp1");
-		u2 = new Usager("u2", "Albert", "André", "3, rue des lilas", "Chabur", "12850", "user2", "mdp2");
+		u1 = new Usager("u1", "Dupont", "Laurent", "user1", "mdp1");
+		u2 = new Usager("u2", "Albert", "André", "user2", "mdp2");
 	}
 	@Test
 	public void testUsager() {

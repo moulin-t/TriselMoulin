@@ -47,7 +47,7 @@ public class HabitationDAO extends DAO<Habitation> {
 			if (rsHab.next())
 			{   
 				// récupération de l’objet Usager avec uDAO
-				u = uDAO.find(rsHab.getString(4));
+				u = uDAO.find(rsHab.getString("idUsager"));
 				// instanciation objet habitation
 				hab = new Habitation(rsHab.getString("idHabitation"), rsHab.getString("adresseRue"), 
 						rsHab.getString("adresseVille"), u);

@@ -51,9 +51,8 @@ public class UsagerDAO extends DAO<Usager> {
 			// test du résultat
 			if (rsUsager.next())
 			{
-				unUsager = new Usager(rsUsager.getString(1), rsUsager.getString(2), 
-						rsUsager.getString(3), rsUsager.getString(6), rsUsager.getString(7),
-						rsUsager.getString(8), rsUsager.getString(4), rsUsager.getString(5));
+				unUsager = new Usager(rsUsager.getString("idUsager"), rsUsager.getString("nom"), 
+						rsUsager.getString("prenom"), rsUsager.getString("nomUser"), rsUsager.getString("motDePasse"));
 				// instanciation objet unUsager à faire
 			}
 		}

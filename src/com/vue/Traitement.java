@@ -1,5 +1,7 @@
 package com.vue;
 
+import com.pdf.FacturePdf;
+
 /*import java.util.Date;
 
 import java.util.Calendar;
@@ -93,5 +95,7 @@ public class Traitement {
 		hab = habD.find("hab1");
 		if(hab != null) System.out.println(hab.toString());
 		else System.out.println("Identifiant inexistant");*/
+		FacturePdf fac = new FacturePdf();
+		fac.GenerePdf("hab1", 2015, 07);
 	}
 }

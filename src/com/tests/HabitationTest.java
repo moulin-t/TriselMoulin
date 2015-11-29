@@ -35,7 +35,7 @@ public class HabitationTest {
 	public void setUp() throws Exception {
 		
 		// instanciation usager
-		u = new Usager("u1", "Dupont", "Albert", "6, rue de la p�tale", "Vieux", "66540", "duponta", "monchamalo");
+		u = new Usager("u1", "Dupont", "Albert", "duponta", "monchamalo");
 		// instanciation habitation
 		habIn = new Habitation("hab1", "63 grand-rue", "Ch�teaulin", u);
 		// instanciation 2 types de d�chets

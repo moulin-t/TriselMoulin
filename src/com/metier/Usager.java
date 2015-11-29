@@ -28,15 +28,11 @@ public class Usager {
 	 * @param nomUser
 	 * @param motDePasse
 	 */
-	public Usager(String idUsager, String nom, String prenom, String adresseRueUsager, String adresseVilleUsager,
-			String cpUsager, String nomUser, String motDePasse) {
+	public Usager(String idUsager, String nom, String prenom, String nomUser, String motDePasse) {
 		super();
 		this.idUsager = idUsager;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.adresseRueUsager = adresseRueUsager;
-		this.adresseVilleUsager = adresseVilleUsager;
-		this.cpUsager = cpUsager;
 		this.nomUser = nomUser;
 		this.motDePasse = motDePasse;
 	}
