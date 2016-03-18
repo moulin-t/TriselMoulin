@@ -1,101 +1,45 @@
 package com.vue;
 
+import java.util.Scanner;
+
 import com.pdf.FacturePdf;
-
-/*import java.util.Date;
-
-import java.util.Calendar;
-
-import com.metier.Habitation;
-import com.metier.Levee;
-import com.metier.Poubelle;
-import com.metier.TypeDechet;
-import com.metier.Usager;
-import com.persistance.AccesBd;
-import com.persistance.HabitationDAO;
-import com.persistance.LeveeDAO;
-import com.persistance.PoubelleDAO;
-import com.persistance.TypeDechetDAO;
-import com.persistance.UsagerDAO;
 import com.util.InsertionLevee;
-import java.sql.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
-import com.util.Parametres;*/
 public class Traitement {
 
 	public static void main(String[] args) {
-		/*InsertionLevee.traitementFichierTexte("pesee.txt");
-		InsertionLevee.traitementFichierXml("pesee.xml");
-		System.out.println(Parametres.getCheminBd());
-		System.out.println(Parametres.getCheminFacturePdf());
-		System.out.println(Parametres.getCheminLeveeATraiter());
-		System.out.println(Parametres.getCheminLeveeLog());
-		System.out.println(Parametres.getCheminLeveeTraites());
-		System.out.println(Parametres.getChemin(4));
-		System.out.println(Parametres.getExtensionFichier("arbres.txt"));
-		InsertionLevee.traitementLevee();
-		Connection cnx = AccesBd.getInstance();
-		try{
-			// création d'un objet statement
-			Statement requete = cnx.createStatement();
-			// texte de la requête
-			String sql = "select nom, prenom from usager";
-			// exécution de la requête, résultat dans un jeu d'enregistrement de type resulset
-			ResultSet rsUsager = requete.executeQuery(sql);
-			// parcours 
-			while (rsUsager.next()) {
-				// accès aux champs du rs en fonction du type et du nom
-				System.out.println(rsUsager.getString("nom") + "  " + rsUsager.getString("prenom"));
+		int choix = 0;
+		Scanner in = new Scanner(System.in);
+		while (choix != 3) {
+			System.out.println("Menu général");
+			System.out.println("1- Insersion des levées");
+			System.out.println("2- Edition des factures");
+			System.out.println("3- Quitter");
+			System.out.println("Donnez votre choix");
+			choix = in.nextInt();
+			switch (choix){
+			case 1 :
+				insertion();
+				break;
+			case 2 :
+				facturation();
+			case 3 :
+				break;
 			}
-		} catch (SQLException e1) {
-			e1.printStackTrace();
+			private static void insertion(){
+				InsertionLevee.traitementLevee();
+			}
+			private static void facturation(){
+				int mois, an; String idH;
+				System.out.println("Saisissez l'identifiant de l'habitation souhaitée.");
+				idH = in.nextLine();
+				System.out.println("Saisissez le mois de la facture.");
+				mois = in.nextInt();
+				System.out.println("Saisissez l'année de la facture.");
+				an = in.nextInt();
+				FacturePdf.GenerePdf(idH, an, mois);
+				break;
+			}
 		}
-		java.util.Date date = null;
-		SimpleDateFormat dateFormat = null;
-		dateFormat =  new SimpleDateFormat("dd/MM/yyyy");
-		try{
-			// instanciation date de lev�e au format fran�ais
-			date = dateFormat.parse("15/05/2015");
-			// instanciation objet Lev�e avec les deux constructeurs
-			Levee le1 = new Levee(date, 5, "pb1");
-			LeveeDAO ldao = new LeveeDAO();
-			if(ldao.create(le1)) System.out.println("Ok!");
-			else System.out.println("Ko!");
-		} 
-		catch (ParseException e){
-			e.printStackTrace();
-		} 
-		InsertionLevee.traitementFichierTexte("pesee.txt");
-		UsagerDAO usagerD = new UsagerDAO();
-		Usager u = usagerD.find("usag1");
-		if(u != null) System.out.println(u.toString());
-		u = usagerD.find("ussag1");
-		if(u == null) System.out.println("usager inexistant");
-		TypeDechetDAO typeD = new TypeDechetDAO();
-		TypeDechet t = typeD.find("pla");
-		if(t != null) System.out.println(t.toString());
-		t = typeD.find("plakk");
-		if(t == null) System.out.println("Type inexistant");
-		LeveeDAO leveeD = new LeveeDAO();
-		Levee laLevee = leveeD.find("12");
-		if(laLevee != null) System.out.println(laLevee.toString());
-		if(laLevee == null) System.out.println("Identifiant inexistant");
-		laLevee = leveeD.find("798");
-		if(laLevee == null) System.out.println("Identifiant inexistant");
-		PoubelleDAO pbDAO = new PoubelleDAO();
-		Poubelle pb = pbDAO.find("pb1");
-		if(pb != null) System.out.println(pb.toString());
-		else System.out.println("Identifiant inexistant");
-		HabitationDAO habD = new HabitationDAO();
-		Habitation hab = habD.find("hab1");
-		if(hab != null) System.out.println(hab.toString());
-		else System.out.println("Identifiant inexistant");
-		hab = habD.find("hab1");
-		if(hab != null) System.out.println(hab.toString());
-		else System.out.println("Identifiant inexistant");*/
-		FacturePdf fac = new FacturePdf();
-		fac.GenerePdf("hab1", 2015, 07);
 	}
 }

@@ -17,9 +17,11 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.metier.Facture;
 import com.metier.Habitation;
 import com.metier.Levee;
 import com.metier.Poubelle;
+import com.persistance.FactureDAO;
 import com.persistance.HabitationDAO;
 
 public class FacturePdf {
@@ -27,9 +29,10 @@ public class FacturePdf {
 	                                       "Octobre", "Novembre", "Décembre"};
 	
 	@SuppressWarnings("deprecation")
-	public void GenerePdf(String idH, int an, int mois){
+	public static void GenerePdf(String idH, int an, int mois){
 		HabitationDAO hDao = new HabitationDAO();
 		Habitation h = hDao.find(idH);
+		FactureDAO fDao = new FactureDAO();
 		Document doc = new Document();
 		try {
 			DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
@@ -137,7 +140,8 @@ public class FacturePdf {
 			table.addCell(cel);
 			doc.add(table);
 			doc.close();
-			Runtime.getRuntime().exec("explorer.exe facture.pdf");
+			Facture facture = new Facture(2015, 11, "test2", "hab2");
+			fDao.create(facture);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

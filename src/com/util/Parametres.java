@@ -5,7 +5,7 @@ import java.io.File;
 public class Parametres {
 	//Instanciation du fichier cible
 	private static String nomFichier = "paramAppli.ini";
-	//Méthodes pour ramener chaque chemin 1
+	//Mï¿½thodes pour ramener chaque chemin 1
 	private static String getChemin(int n){
 		FichierTexte fichier = new FichierTexte();
 		String chemin = null;
@@ -23,13 +23,13 @@ public class Parametres {
 	}
 	public static void transfertFichier(File source, File dest){
 		if(source.renameTo(dest)){
-			System.out.println("Fichier déplacé avec succes.");
+			System.out.println("Fichier dï¿½placï¿½ avec succes.");
 		}
 		else{
-			System.out.println("Echec lors du déplacement!");
+			System.out.println("Echec lors du dï¿½placement!");
 		}
 	}
-	//Méthodes pour ramener chaque chemin 2
+	//Mï¿½thodes pour ramener chaque chemin 2
 	public static String getCheminBd(){
 		return getChemin(2);
 	}
@@ -44,5 +44,10 @@ public class Parametres {
 	}
 	public static String getCheminFacturePdf(){
 		return getChemin(8);
+	}
+	public static int  nbLevee() {
+		String cheminLevee = getCheminLeveeATraiter();
+		File f = new File(cheminLevee);
+		return f.listFiles().length; 
 	}
 }

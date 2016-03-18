@@ -10,14 +10,15 @@ public class FactureDAO extends DAO<Facture> {
 
 	@Override
 	public boolean create(Facture obj) {
-		String sqlEx = "select * from facture where anF = '" + obj.getAnF() + 
-				"', moisF = '" + obj.getMoisF() + 
-				"', idHabitation = '" + obj.getIdHabitation() + "';";
+		String sqlEx = "select * from facture where anF = " + obj.getAnF() + 
+				" and moisF = " + obj.getMoisF() + 
+				" and idHabitation = '" + obj.getIdHabitation() + "';";
 		try {
 			ResultSet rsF = con.createStatement().executeQuery(sqlEx);
 			if(!rsF.next()){
-				String sqlAdd = "insert into (anF, moisF, nomF, idHabitation) values ('" + obj.getAnF() + "',"
-						+ " '" + obj.getMoisF() + "', " + obj.getNomF() + ", " + obj.getIdHabitation() + ");";
+				String sqlAdd = "insert into facture (anF, moisF, nomF, idHabitation) values (" + obj.getAnF() + ","
+						+ " " + obj.getMoisF() + ", '" + obj.getNomF() + "', '" + obj.getIdHabitation() + "');";
+				con.createStatement().executeUpdate(sqlAdd);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

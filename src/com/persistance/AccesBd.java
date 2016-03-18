@@ -22,12 +22,12 @@ public class AccesBd {
 			catch (ClassNotFoundException e)
 			{
 				System.out.println(e.getMessage());
-				System.out.println("�chec driver");
+				System.out.println("échec driver");
 			}
 			catch (SQLException e)
 			{
 				System.out.println(e.getMessage());
-				System.out.println("�chec de connexion bd ");
+				System.out.println("échec de connexion bd ");
 			}
 		}
 
